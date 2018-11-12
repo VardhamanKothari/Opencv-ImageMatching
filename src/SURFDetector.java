@@ -1,11 +1,7 @@
 import org.opencv.calib3d.Calib3d;
 import org.opencv.core.*;
-//import org.opencv.core.DMatch;
-//import org.opencv.core.KeyPoint;
 import org.opencv.features2d.*;
 import org.opencv.highgui.Highgui;
-//import org.opencv.imgcodecs.Imgcodecs;
-//import org.opencv.imgproc.Imgproc;
 import org.opencv.imgproc.Imgproc;
 
 import java.io.File;
@@ -30,11 +26,10 @@ public class SURFDetector {
             }
         }
 
-        //System.out.println(lib.getAbsolutePath());
         System.load(lib.getAbsolutePath());
 
-        String bookObject = "C:\\Users\\vk250281\\Desktop\\bookobject.jpg";
-        String bookScene = "C:\\Users\\vk250281\\Desktop\\bookscene.jpg";
+        String bookObject = "Images\\bookobject.jpg";
+        String bookScene = "Images\\bookscene.jpg";
 
         System.out.println("Started....");
         System.out.println("Loading images...");
@@ -149,9 +144,9 @@ public class SURFDetector {
 
             Features2d.drawMatches(objectImage, objectKeyPoints, sceneImage, sceneKeyPoints, goodMatches, matchoutput, matchestColor, newKeypointColor, new MatOfByte(), 2);
 
-            Highgui.imwrite("C:\\Users\\vk250281\\Desktop\\outputImage.png", outputImage);
-            Highgui.imwrite("C:\\Users\\vk250281\\Desktop\\matchoutput.png", matchoutput);
-            Highgui.imwrite("C:\\Users\\vk250281\\Desktop\\img.jpg", img);
+            Highgui.imwrite("Output\\outputImage.png", outputImage);
+            Highgui.imwrite("Output\\matchoutput.png", matchoutput);
+            Highgui.imwrite("Output\\img.jpg", img);
         } else {
             System.out.println("Object Not Found");
         }
